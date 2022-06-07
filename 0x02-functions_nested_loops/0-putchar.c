@@ -4,9 +4,11 @@
  * main - prints _putchar
  * Return: 0
  */
-int main() 
+int main(void)
 {
 	char put[] = "_putchar";
-    
-    printf("%s", put);
+
+	printf("%s", put);
+
+	return (0);
 }
