@@ -1,20 +1,18 @@
 #include "main.h"
-#include<stdio.h>
 
 /**
- * print_to_98 - count from n to 98.
- *@n:integer.
+ * _isalpha - check charachter.
+ *@c: charachter
  * Return: Always 0.
  */
-void print_to_98(int n)
+int _isalpha(int c)
 {
-	while (n != 98)
+	if (((c >= 97) && (c <= 122)) || ((c >= 65) && (c <= 90)))
 	{
-		printf("%i, ", n);
-		if (n > 98)
-			n--;
-		else
-			n++;
+		return (1);
 	}
-	printf("98\n");
+	else
+	{
+		return (0);
+	}
 }
