@@ -2,25 +2,26 @@
 
 /**
  * _strcat - concat 2 string
- * @first:char
- * @second:char
+ * @dest:char
+ * @src:char
  * Return:char
  */
-char *_strcat(char *first, char *second)
+char *_strcat(char *dest, char *src)
 {
-	char *s = first;
+	char *s = dest;
 
-	while (*first != '\0')
+	while (*dest != '\0')
 	{
-		first++;
+		dest++;
 	}
 
-	while (*second != '\0')
+	while (*src != '\0')
 	{
-		*first = *second;
-		first++;
-		second++;
+		*dest = *src;
+		dest++;
+		src++;
 	}
-	*first = '\0';
+	*dest = '\0';
 	return (s);
 }
+
