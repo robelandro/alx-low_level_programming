@@ -6,7 +6,7 @@
  * @b:int
  * Return:int
  */
-int is_prime(unsigned int a,unsigned int b)
+int is_prime(unsigned int a, unsigned int b)
 {
 	if (b < 2 || b % a == 0)
 		return (0);
