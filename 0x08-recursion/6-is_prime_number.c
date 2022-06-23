@@ -26,3 +26,4 @@ int is_prime_number(int n)
 	if (n == 2)
 		return (1);
 	return (is_prime(2, n));
+}
