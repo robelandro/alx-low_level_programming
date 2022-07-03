@@ -9,7 +9,7 @@
  */
 int main(int argc, char *argv[])
 {
-	int i,result;
+	int i;
 	char er[] = "Error";
 
 	if (argc != 4)
