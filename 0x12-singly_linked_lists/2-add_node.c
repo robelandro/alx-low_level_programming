@@ -1,5 +1,4 @@
 #include "lists.h"
-
 /**
   *_strlen - finds length of a string.
   *@str: string.
@@ -25,14 +24,17 @@ int _strlen(const char *str)
   */
 list_t *add_node(list_t **head, const char *str)
 {
-		list_t *new;
+	list_t *place_holder;
 
-		new = malloc(sizeof(list_t));
-		if (new == NULL)
-			return (NULL);
-		new->str = strdup(str);
-		new->len = _strlen(str);
-		new->next = *head;
-		*head = new;
-		return (new);
+	place_holder = malloc(sizeof(list_t));
+	if (place_holder == NULL)
+		return (NULL);
+	place_holder->next = head;
+	place_holder->str = strdup(str);
+	place_holder->len = _strlen(str);
+
+	head = place_holder;
+
+	return (head);
+
 }
