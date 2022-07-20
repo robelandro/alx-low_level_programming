@@ -1,26 +1,19 @@
 #include "lists.h"
 
 /**
- * sum_listint - sums two linked lists
- * @l1: first linked list
- * @l2: second linked list
+ * sum_listint - sums all the nodes of a listint_t linked list
+ * @head: pointer to the head of the list
  *
- * Return: sum of two linked lists
+ * Return: the sum of all the nodes
  */
 int sum_listint(listint_t *head)
 {
-	listint_t *temp;
-	int sum;
-	int i;
-	
-	temp = head;
-	sum = 0;
-	i = 0;
-	while (temp != NULL)
+	int sum = 0;
+
+	while (head != NULL)
 	{
-		sum += temp->n;
-		temp = temp->next;
-		i++;
+		sum += head->n;
+		head = head->next;
 	}
 	return (sum);
 }
