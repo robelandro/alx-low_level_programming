@@ -9,28 +9,29 @@
  */
 size_t free_listint_safe(listint_t **h)
 {
-	listint_t *curr, *next;
 	size_t count = 0;
+	int diff;
+	listint_t *temp;
 
-	if (h == NULL)
+	if (!h || !*h)
 		return (0);
 
-	curr = *h;
-	while (curr)
+	while (*h)
 	{
-		next = curr->next;
-		if (curr->n == curr->next->n)
+		diff = *h - (*h)->next;
+		if (diff > 0)
 		{
-			free(curr);
-			curr = next;
+			temp = (*h)->next;
+			free(*h);
+			*h = temp;
 			count++;
 		}
 		else
 		{
-			curr->next = next->next;
-			free(next);
-			curr = curr->next;
+			free(*h);
+			*h = NULL;
 			count++;
+			break;
 		}
 	}
 	*h = NULL;
