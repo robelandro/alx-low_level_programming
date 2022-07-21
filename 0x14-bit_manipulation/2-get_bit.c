@@ -5,7 +5,7 @@
  * @n: the number to check
  * @index: the index of the bit to check
  *
- * Return: 1 if the bit is 1, 0 if the bit is 0, 
+ * Return: 1 if the bit is 1, 0 if the bit is 0,
  * -1 if the index is out of range
  */
 int get_bit(unsigned long int n, unsigned int index)
@@ -13,5 +13,10 @@ int get_bit(unsigned long int n, unsigned int index)
 	unsigned int mask = 1 << index;
 	unsigned int bit = n & mask;
 	unsigned int result = bit >> index;
-	return (result);
+
+	if (index > 63)
+		return (-1);
+	if (result == 1)
+		return (1);
+	return (0);
 }
