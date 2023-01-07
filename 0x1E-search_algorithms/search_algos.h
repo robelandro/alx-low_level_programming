@@ -41,7 +41,7 @@ typedef struct skiplist_s
 	struct skiplist_s *express;
 } skiplist_t;
 
-void array_print(int *array, size_t lo, size_t hi)
+void array_print(int *array, size_t lo, size_t hi);
 int linear_search(int *array, size_t size, int value);
 int binary_search(int *array, size_t size, int value);
 int jump_search(int *array, size_t size, int value);
